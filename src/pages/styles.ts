@@ -4,7 +4,7 @@ export const sectionBase: SxProps<Theme> = {
   textAlign: 'left',
   minHeight: '100vh',
   scrollSnapAlign: 'start',
-  scrollMarginTop: '40px',
+  scrollMarginTop: '30px',
   display: 'flex',
   alignItems: 'start',
   justifyContent: 'start',
@@ -17,6 +17,8 @@ export const sectionInner: SxProps<Theme> = {
   flexDirection: 'column',
   gap: 2,
   width: '100%',
+  maxWidth: { xs: '100%', lg: '70%' },
+  mx: 'auto',
 }
 
 export const centerRow: SxProps<Theme> = {

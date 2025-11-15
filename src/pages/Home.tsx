@@ -23,10 +23,10 @@ export default function Home() {
         <Box sx={centerRow}>
           <Countdown target={targetDate} />
         </Box>
-        <Typography variant="h3" component="h2">
+        <Typography variant="h3" component="h2" sx={{ ml: '16px' }}>
           BARBARA + MATEUSZ
         </Typography>
-        <Box sx={centerRow} style={{ display: 'flex', flexDirection: 'column'}}>
+        <Box sx={centerRow} style={{ display: 'flex', flexDirection: 'column', marginLeft: '18px' }}>
           <Typography >
             Saturday, 6th June 2026 at 10 am
           </Typography>
@@ -35,14 +35,14 @@ export default function Home() {
           </Typography>
         </Box>
         <Box sx={centerRow}>
-          <Button style={{ borderRadius: '30px', border: '1px solid black', minWidth: '150px'}} size='large' color="black" onClick={handleNavigate}>RSVP</Button>
+          <Button style={{ borderRadius: '30px', border: '1px solid black', minWidth: '150px', marginLeft: '18px'}} size='large' color="black" onClick={handleNavigate}>RSVP</Button>
         </Box>
         <Box sx={centerRow}>
         <img
           src={polaroids}
           alt="Barbara and Mateusz"
           style={{
-            width: '80%'
+            width: '100%'
           }}
         />
         </Box>

@@ -56,7 +56,7 @@ export default function Countdown({ target, onComplete, className }: CountdownPr
   }, [targetMs, onComplete])
 
   return (
-    <Box className={className} sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+    <Box className={className} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
       <TimeBlock label="Days" value={String(timeLeft.days)} />
       <Separator />
       <TimeBlock label="Hours" value={pad2(timeLeft.hours)} />
