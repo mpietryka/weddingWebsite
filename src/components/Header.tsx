@@ -13,7 +13,6 @@ export default function Header({ onNavigate }: HeaderProps) {
           <Button color="inherit" onClick={() => onNavigate?.('rsvp')}>RSVP</Button>
           <Button color="inherit" onClick={() => onNavigate?.('schedule')}>Schedule</Button>
           <Button color="inherit" onClick={() => onNavigate?.('gifts')}>Gifts</Button>
-          <Button color="inherit" onClick={() => onNavigate?.('faqs')}>FAQs</Button>
         </Box>
       </Toolbar>
     </AppBar>

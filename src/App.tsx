@@ -1,13 +1,9 @@
 import './App.css'
 
-import Header from './components/Header'
 import { CssBaseline, Box, Toolbar } from '@mui/material'
 import { useCallback } from 'react'
-import Home from './pages/Home'
-import Rsvp from './pages/Rsvp'
-import Schedule from './pages/Schedule'
-import Gifts from './pages/Gifts'
-import Faqs from './pages/Faqs'
+import { Header } from './components'
+import { Home, Rsvp, Schedule, Gifts } from './pages'
 
 function App() {
   const handleNavigate = useCallback((sectionId: string) => {
@@ -38,7 +34,6 @@ function App() {
         <Rsvp />
         <Schedule />
         <Gifts />
-        <Faqs />
       </Box>
     </>
   )

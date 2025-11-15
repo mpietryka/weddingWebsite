@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import AlternateReverseTimeline from '../components/Timeline'
+import { AlternateReverseTimeline } from '../components'
 
 export default function Schedule() {
   return (
@@ -27,5 +27,6 @@ export default function Schedule() {
     </Box>
   )
 }
+
 
 
