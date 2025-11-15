@@ -2,6 +2,7 @@ import { Box, Button, Typography } from '@mui/material'
 import { useCallback } from 'react'
 import { Countdown } from '../components'
 import { sectionBase, sectionInner, centerRow } from './styles'
+import polaroids from '../assets/images/polaroids.jpg'
 
 export default function Home() {
   const targetDate = new Date("2026-06-06T10:00:00+01:00");
@@ -19,16 +20,31 @@ export default function Home() {
       sx={sectionBase}
     >
       <Box sx={sectionInner}>
-        <Typography variant="h3" component="h2">
-          We're getting married in:
-        </Typography>
         <Box sx={centerRow}>
           <Countdown target={targetDate} />
         </Box>
-        <Box sx={centerRow}>
+        <Typography variant="h3" component="h2">
+          BARBARA + MATEUSZ
+        </Typography>
+        <Box sx={centerRow} style={{ display: 'flex', flexDirection: 'column'}}>
+          <Typography >
+            Saturday, 6th June 2026 at 10 am
+          </Typography>
+          <Typography >
+            Hackney Town Hall, London
+          </Typography>
         </Box>
         <Box sx={centerRow}>
-          <Button style={{ borderRadius: '30px', border: '1px solid #3496AE', minWidth: '150px'}} size='large' color="primary" onClick={handleNavigate}>RSVP</Button>
+          <Button style={{ borderRadius: '30px', border: '1px solid black', minWidth: '150px'}} size='large' color="black" onClick={handleNavigate}>RSVP</Button>
+        </Box>
+        <Box sx={centerRow}>
+        <img
+          src={polaroids}
+          alt="Barbara and Mateusz"
+          style={{
+            width: '80%'
+          }}
+        />
         </Box>
       </Box>
     </Box>

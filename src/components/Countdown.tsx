@@ -43,7 +43,7 @@ export default function Countdown({ target, onComplete, className }: CountdownPr
     setTimeLeft(calculateTimeLeft(targetMs))
     completedCalledRef.current = false
     const id = window.setInterval(() => {
-      setTimeLeft((prev) => {
+      setTimeLeft(() => {
         const next = calculateTimeLeft(targetMs)
         if (next.completed && !completedCalledRef.current) {
           completedCalledRef.current = true
@@ -62,6 +62,8 @@ export default function Countdown({ target, onComplete, className }: CountdownPr
       <TimeBlock label="Hours" value={pad2(timeLeft.hours)} />
       <Separator />
       <TimeBlock label="Minutes" value={pad2(timeLeft.minutes)} />
+      <Separator />
+      <TimeBlock label="Seconds" value={pad2(Math.max(0, Math.floor((toTimestampMs(target) - Date.now()) / 1000) % 60))} />
     </Box>
   )
 }
@@ -69,10 +71,10 @@ export default function Countdown({ target, onComplete, className }: CountdownPr
 function TimeBlock({ label, value }: { label: string; value: string }) {
   return (
     <Box sx={{ textAlign: 'center', minWidth: 72 }}>
-      <Typography variant="h3" component="div" color="text.primary">
+      <Typography variant="h3" component="div" color="text.primary" sx={{ fontSize: 12, lineHeight: 1.2 }}>
         {value}
       </Typography>
-      <Typography variant="caption" color="text.secondary">
+      <Typography variant="caption" color="text.secondary" sx={{ fontSize: 12, lineHeight: 1.2 }}>
         {label}
       </Typography>
     </Box>
@@ -81,7 +83,7 @@ function TimeBlock({ label, value }: { label: string; value: string }) {
 
 function Separator() {
   return (
-    <Typography variant="h4" component="div" color="text.secondary" sx={{ lineHeight: 1 }}>
+    <Typography variant="h4" component="div" color="text.secondary" sx={{ lineHeight: 1, fontSize: 12 }}>
       :
     </Typography>
   )

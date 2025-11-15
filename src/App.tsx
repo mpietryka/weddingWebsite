@@ -29,7 +29,7 @@ function App() {
           '&::-webkit-scrollbar': { display: 'none' }, // Chrome/Safari
         }}
       >
-        <Toolbar />
+        {/* <Toolbar disableGutters /> */}
         <Home />
         <Schedule />
         <Gifts />
