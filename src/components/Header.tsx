@@ -10,9 +10,9 @@ export default function Header({ onNavigate }: HeaderProps) {
       <Toolbar sx={{ height: '100%', alignItems: 'center' }}>
         <Box sx={{ display: 'flex', gap: 1 }}>
           <Button color="inherit" onClick={() => onNavigate?.('home')}>Home</Button>
-          <Button color="inherit" onClick={() => onNavigate?.('rsvp')}>RSVP</Button>
           <Button color="inherit" onClick={() => onNavigate?.('schedule')}>Schedule</Button>
           <Button color="inherit" onClick={() => onNavigate?.('gifts')}>Gifts</Button>
+          <Button color="inherit" onClick={() => onNavigate?.('rsvp')}>RSVP</Button>
         </Box>
       </Toolbar>
     </AppBar>

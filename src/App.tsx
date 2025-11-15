@@ -31,9 +31,9 @@ function App() {
       >
         <Toolbar />
         <Home />
-        <Rsvp />
         <Schedule />
         <Gifts />
+        <Rsvp />
       </Box>
     </>
   )
