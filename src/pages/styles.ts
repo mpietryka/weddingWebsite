@@ -4,7 +4,7 @@ export const sectionBase: SxProps<Theme> = {
   textAlign: 'left',
   minHeight: '100vh',
   scrollSnapAlign: 'start',
-  scrollMarginTop: { xs: '56px', sm: '64px' },
+  scrollMarginTop: '40px',
   display: 'flex',
   alignItems: 'start',
   justifyContent: 'start',

@@ -1,6 +1,6 @@
 import './App.css'
 
-import { CssBaseline, Box, Toolbar } from '@mui/material'
+import { CssBaseline, Box } from '@mui/material'
 import { useCallback } from 'react'
 import { Header } from './components'
 import { Home, Rsvp, Schedule, Gifts } from './pages'
@@ -29,7 +29,7 @@ function App() {
           '&::-webkit-scrollbar': { display: 'none' }, // Chrome/Safari
         }}
       >
-        {/* <Toolbar disableGutters /> */}
+        <div style={{ height: '80px', backgroundColor: '#F5F5F4'}} />
         <Home />
         <Schedule />
         <Gifts />
