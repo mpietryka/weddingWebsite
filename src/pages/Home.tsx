@@ -42,8 +42,7 @@ export default function Home() {
             src={polaroids}
             alt="Barbara and Mateusz"
             style={{
-              width: '100%',
-              height: 'auto'
+              width: '100%'
             }}
           />
         </Box>

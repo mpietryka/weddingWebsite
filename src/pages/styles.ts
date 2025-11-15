@@ -3,7 +3,7 @@ import type { SxProps, Theme } from '@mui/material/styles'
 export const sectionBase: SxProps<Theme> = {
   textAlign: 'left',
   minHeight: '100vh',
-  scrollSnapAlign: 'start',
+  // scrollSnapAlign: 'start',
   scrollMarginTop: '30px',
   display: 'flex',
   alignItems: 'start',

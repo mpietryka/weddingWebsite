@@ -22,7 +22,6 @@ function App() {
         sx={{
           height: '100vh',
           overflowY: 'auto',
-          scrollSnapType: 'y mandatory',
           bgcolor: 'background.default',
           msOverflowStyle: 'none', // IE/Edge
           scrollbarWidth: 'none', // Firefox

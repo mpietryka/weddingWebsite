@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import { sectionBase } from './styles'
+import { sectionBase, sectionInner } from './styles'
 
 export default function Gifts() {
   return (
@@ -8,9 +8,11 @@ export default function Gifts() {
       component="section"
       sx={sectionBase}
     >
-      <Typography variant="h3" component="h2">
-        Gifts
-      </Typography>
+      <Box sx={sectionInner}>
+        <Typography variant="h3" component="h2">
+          Gifts
+        </Typography>
+      </Box>
     </Box>
   )
 }
