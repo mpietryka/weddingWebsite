@@ -29,7 +29,7 @@ function App() {
           '&::-webkit-scrollbar': { display: 'none' }, // Chrome/Safari
         }}
       >
-        <div style={{ height: '80px', backgroundColor: '#F5F5F4'}} />
+        <div style={{ height: '60px', backgroundColor: '#F5F5F4'}} />
         <Home />
         <Schedule />
         <Gifts />

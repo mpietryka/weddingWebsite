@@ -8,7 +8,7 @@ export const sectionBase: SxProps<Theme> = {
   display: 'flex',
   alignItems: 'start',
   justifyContent: 'start',
-  pt: 6,
+  pt: 4,
   backgroundColor: '#F5F5F4',
 }
 
@@ -23,7 +23,9 @@ export const sectionInner: SxProps<Theme> = {
 
 export const centerRow: SxProps<Theme> = {
   display: 'flex',
-  justifyContent: 'start'
+  justifyContent: 'start',
+  marginLeft: { xs: "18px", md: '0px', lg: '0px' },
+  marginBottom: { xs: "5px", md: '0px', lg: '0px' }
 }
 
 
