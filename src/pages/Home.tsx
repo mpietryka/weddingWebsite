@@ -35,7 +35,7 @@ export default function Home() {
           </Typography>
         </Box>
         <Box sx={centerRow}>
-          <Button style={{ borderRadius: '30px', border: '1px solid black', minWidth: '150px' }} size='large' color="black" onClick={handleNavigate}>RSVP</Button>
+          <Button style={{ borderRadius: '30px', border: '1px solid black', minWidth: '150px', color: 'black' }} size='large' onClick={handleNavigate}>RSVP</Button>
         </Box>
         <Box>
           <img
