@@ -3,13 +3,14 @@ import type { SxProps, Theme } from '@mui/material/styles'
 export const sectionBase: SxProps<Theme> = {
   textAlign: 'left',
   minHeight: '100vh',
-  // scrollSnapAlign: 'start',
   scrollMarginTop: '30px',
   display: 'flex',
+  flexDirection: 'column',
   alignItems: 'start',
   justifyContent: 'start',
   pt: 4,
   backgroundColor: '#F5F5F4',
+  width: '100%',
 }
 
 export const sectionInner: SxProps<Theme> = {
