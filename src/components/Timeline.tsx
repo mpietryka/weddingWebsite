@@ -9,7 +9,7 @@ import { timelineCard } from './styles';
 
 export default function AlternateReverseTimeline() {
   return (
-    <Timeline position="alternate-reverse">
+    <Timeline position="alternate-reverse" sx={{ padding: 0 }}>
       <TimelineItem>
         <TimelineSeparator>
           <TimelineDot />
@@ -30,7 +30,7 @@ export default function AlternateReverseTimeline() {
         <TimelineContent>
           <Box sx={timelineCard}>
             <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Overground - 11:00</Typography>
-            <Typography variant="body1">After the ceremony, we'll head to the Overground station to catch the quick train to our final destination - <strong>The Spread Eagle Pub</strong>. </Typography>
+            <Typography variant="body1">After the ceremony, we'll head to the Overground station to catch the quick train to our final destination. </Typography>
           </Box>
         </TimelineContent>
       </TimelineItem>
@@ -41,7 +41,7 @@ export default function AlternateReverseTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <Box sx={timelineCard}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Spread Eagle Pub - 11:30</Typography>
+            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>The Spread Eagle - 11:30</Typography>
             <Typography variant="body1">We arrive at our lovely venue for lunch, cake, drinks and some light hearted fun. </Typography>
           </Box>
         </TimelineContent>
