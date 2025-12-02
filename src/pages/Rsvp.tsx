@@ -6,7 +6,7 @@ export default function Rsvp() {
     <Box
       id="rsvp"
       component="section"
-      sx={sectionBase}
+      sx={{...sectionBase, minHeight: '95vh'}}
     >
       <Box sx={sectionInner}>
         <Typography variant="h3" component="h2">
