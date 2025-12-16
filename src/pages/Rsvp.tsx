@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import { sectionBase, sectionInner, centerRow } from './styles'
+import RsvpForm from '../components/RsvpForm'
 
 export default function Rsvp() {
   return (
@@ -14,6 +15,8 @@ export default function Rsvp() {
             RSVP
           </Typography>
         </Box>
+
+        <RsvpForm />
       </Box>
     </Box>
   )
