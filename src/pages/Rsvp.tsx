@@ -15,7 +15,6 @@ export default function Rsvp() {
             RSVP
           </Typography>
         </Box>
-
         <RsvpForm />
       </Box>
     </Box>
