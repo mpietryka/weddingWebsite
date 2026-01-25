@@ -1,5 +1,7 @@
-import { Box, TextField, Checkbox, FormControlLabel, Button, Typography } from '@mui/material'
+import { Box, TextField, Checkbox, FormControlLabel, Button, Typography, Alert, CircularProgress } from '@mui/material'
 import { useState } from 'react'
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 
 export default function RsvpForm() {
   const [formData, setFormData] = useState({
@@ -17,6 +19,9 @@ export default function RsvpForm() {
     attending: '',
     plusOne: ''
   })
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null)
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -58,25 +63,64 @@ export default function RsvpForm() {
     return !Object.values(newErrors).some(error => error !== '')
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (validateForm()) {
-      console.log('Form submitted:', formData)
-      // Reset form after successful submission
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        attending: null,
-        plusOne: null
-      })
-      setErrors({
-        firstName: '',
-        lastName: '',
-        email: '',
-        attending: '',
-        plusOne: ''
-      })
+      setIsSubmitting(true)
+      setSubmitStatus(null)
+
+      try {
+        const response = await fetch(`${API_URL}/send`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            recipient: formData.email,
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            attending: formData.attending,
+            plusOne: formData.plusOne
+          })
+        })
+
+        const data = await response.json()
+
+        if (response.ok) {
+          setSubmitStatus({
+            type: 'success',
+            message: 'Thank you for your RSVP! Please check your email for confirmation.'
+          })
+          // Reset form after successful submission
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            attending: null,
+            plusOne: null
+          })
+          setErrors({
+            firstName: '',
+            lastName: '',
+            email: '',
+            attending: '',
+            plusOne: ''
+          })
+        } else {
+          setSubmitStatus({
+            type: 'error',
+            message: data.error || 'Failed to submit RSVP. Please try again.'
+          })
+        }
+      } catch (error) {
+        console.error('Error submitting RSVP:', error)
+        setSubmitStatus({
+          type: 'error',
+          message: 'Failed to submit RSVP. Please check your connection and try again.'
+        })
+      } finally {
+        setIsSubmitting(false)
+      }
     }
   }
 
@@ -108,6 +152,11 @@ export default function RsvpForm() {
           width: '100%'
         }}
       >
+        {submitStatus && (
+          <Alert severity={submitStatus.type} sx={{ mb: 2 }}>
+            {submitStatus.message}
+          </Alert>
+        )}
         <TextField
           label="First Name"
           value={formData.firstName}
@@ -245,10 +294,18 @@ export default function RsvpForm() {
         <Button
           type="submit"
           size="large"
+          disabled={isSubmitting}
           style={{ borderRadius: '30px', border: '1px solid black', minWidth: '150px', color: 'black' }}
           sx={{ mt: 1 }}
         >
-          Submit RSVP
+          {isSubmitting ? (
+            <>
+              <CircularProgress size={20} sx={{ mr: 1, color: 'black' }} />
+              Submitting...
+            </>
+          ) : (
+            'Submit RSVP'
+          )}
         </Button>
       </Box>
     </Box>
