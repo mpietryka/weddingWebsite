@@ -1,8 +1,6 @@
 import { Box, TextField, Checkbox, FormControlLabel, Button, Typography, Alert, CircularProgress } from '@mui/material'
 import { useState } from 'react'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
-
 export default function RsvpForm() {
   const [formData, setFormData] = useState({
     firstName: '',
