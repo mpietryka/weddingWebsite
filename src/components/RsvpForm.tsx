@@ -70,7 +70,7 @@ export default function RsvpForm() {
       setSubmitStatus(null)
 
       try {
-        const response = await fetch(`${API_URL}/send`, {
+        const response = await fetch('https://weddingbff.onrender.com/send', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
