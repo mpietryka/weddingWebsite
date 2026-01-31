@@ -10,7 +10,6 @@ interface ScheduleItemProps {
   time: string
   title: string
   description?: string
-  icon?: React.ReactNode
   subsections?: Subsection[]
   link?: {
     url: string
@@ -18,7 +17,7 @@ interface ScheduleItemProps {
   }
 }
 
-export default function ScheduleItem({ time, title, description, icon, subsections, link }: ScheduleItemProps) {
+export default function ScheduleItem({ time, title, description, subsections, link }: ScheduleItemProps) {
   return (
     <Box
       sx={{
