@@ -23,7 +23,7 @@ const photos = [
   photo7,
   photo8,
   photo10,
-  photo11,
+  photo11
 ]
 
 export default function PhotoCarousel() {
