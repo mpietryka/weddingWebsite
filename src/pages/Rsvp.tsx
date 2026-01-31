@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Divider } from '@mui/material'
 import { sectionBase, sectionInner, centerRow } from './styles'
 import RsvpForm from '../components/RsvpForm'
 
@@ -7,7 +7,7 @@ export default function Rsvp() {
     <Box
       id="rsvp"
       component="section"
-      sx={{...sectionBase, minHeight: '95vh'}}
+      sx={{...sectionBase, minHeight: '95vh', px: { xs: '16px', md: 0 }}}
     >
       <Box sx={sectionInner}>
         <Box sx={centerRow}>
@@ -15,6 +15,7 @@ export default function Rsvp() {
             RSVP
           </Typography>
         </Box>
+        <Divider sx={{ width: '100%', borderColor: 'rgba(0, 0, 0, 0.12)', marginBottom: 2 }} />
         <RsvpForm />
       </Box>
     </Box>

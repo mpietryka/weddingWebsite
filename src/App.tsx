@@ -3,7 +3,7 @@ import './App.css'
 import { CssBaseline, Box, ThemeProvider, createTheme } from '@mui/material'
 import { useCallback } from 'react'
 import { Header } from './components'
-import { Home, Rsvp, Schedule } from './pages'
+import { Home, Rsvp, Schedule, QA } from './pages'
 
 const theme = createTheme({
   typography: {
@@ -37,6 +37,7 @@ function App() {
         <div style={{ height: '100px', backgroundColor: '#F5F5F4'}} />
         <Home />
         <Schedule />
+        <QA />
         <Rsvp />
       </Box>
     </ThemeProvider>
