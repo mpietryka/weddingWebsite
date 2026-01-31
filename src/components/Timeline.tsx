@@ -6,6 +6,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { Box, Typography } from '@mui/material';
 import { timelineCard } from './styles';
+import scheduleData from '../data/schedule.json';
 
 export default function AlternateReverseTimeline() {
   return (
@@ -17,20 +18,8 @@ export default function AlternateReverseTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <Box sx={timelineCard}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Hackney Town Hall - 10:00 </Typography>
-            <Typography variant="body1">Please arrive by 9:45, for a 10am start. Any latecomers will have to wait outside until the ceremony is over. We don't want to you to miss it!</Typography>
-            </Box>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Box sx={timelineCard}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Overground - 11:00</Typography>
-            <Typography variant="body1">After the ceremony, we'll head to the Overground station to catch the quick train to our final destination. The Spread Eagle Pub!</Typography>
+            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{scheduleData.title1}</Typography>
+            <Typography variant="body1">{scheduleData.text1}</Typography>
           </Box>
         </TimelineContent>
       </TimelineItem>
@@ -41,8 +30,20 @@ export default function AlternateReverseTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <Box sx={timelineCard}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>The Spread Eagle - 11:30</Typography>
-            <Typography variant="body1">We arrive at our lovely venue for lunch, cake, drinks and some light hearted fun. </Typography>
+            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{scheduleData.title2}</Typography>
+            <Typography variant="body1">{scheduleData.text2}</Typography>
+          </Box>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>
+          <Box sx={timelineCard}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{scheduleData.title3}</Typography>
+            <Typography variant="body1">{scheduleData.text3}</Typography>
           </Box>
         </TimelineContent>
       </TimelineItem>
@@ -52,8 +53,8 @@ export default function AlternateReverseTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <Box sx={timelineCard}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Thanks for coming! </Typography>
-            <Typography variant="body1">We hope you have a wonderful time and enjoyed our little celebration! </Typography>
+            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{scheduleData.title4}</Typography>
+            <Typography variant="body1">{scheduleData.text4}</Typography>
           </Box>
         </TimelineContent>
       </TimelineItem>

@@ -1,6 +1,7 @@
 import TimelineDot from '@mui/lab/TimelineDot';
 import { Box, Typography } from '@mui/material';
 import { timelineCard } from './styles';
+import scheduleData from '../data/schedule.json';
 
 export default function MobileTimeline() {
   return (
@@ -14,10 +15,10 @@ export default function MobileTimeline() {
     >
       <Box sx={{ ...timelineCard, mx: 3, my: 1.5 }}>
         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-          Hackney Town Hall - 10:00
+          {scheduleData.title1}
         </Typography>
         <Typography variant="body1">
-          Please arrive by 9:45, for a 10 start. Any latecomers will have to wait outside until the ceremony is over. We don't want to you to miss it!
+          {scheduleData.text1}
         </Typography>
       </Box>
 
@@ -27,10 +28,10 @@ export default function MobileTimeline() {
 
       <Box sx={{ ...timelineCard, mx: 3, my: 1.5 }}>
         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-          Overground - 11:00
+          {scheduleData.title2}
         </Typography>
         <Typography variant="body1">
-          After the ceremony, we'll head to the Overground station to catch the quick train to our final destination.
+          {scheduleData.text2}
         </Typography>
       </Box>
 
@@ -40,10 +41,10 @@ export default function MobileTimeline() {
 
       <Box sx={{ ...timelineCard, mx: 3, my: 1.5 }}>
         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-          The Spread Eagle - 11:30
+          {scheduleData.title3}
         </Typography>
         <Typography variant="body1">
-          We arrive at our lovely venue for lunch, cake, drinks and some light hearted fun.
+          {scheduleData.text3}
         </Typography>
       </Box>
 
@@ -53,10 +54,10 @@ export default function MobileTimeline() {
 
       <Box sx={{ ...timelineCard, mx: 3, my: 1.5 }}>
         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-          Thanks for coming!
+          {scheduleData.title4}
         </Typography>
         <Typography variant="body1">
-          We hope you have a wonderful time and enjoyed our little celebration!
+          {scheduleData.text4}
         </Typography>
       </Box>
     </Box>
