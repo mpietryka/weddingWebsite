@@ -1,15 +1,9 @@
 import './App.css'
 
-import { CssBaseline, Box, ThemeProvider, createTheme } from '@mui/material'
+import { CssBaseline, Box } from '@mui/material'
 import { useCallback } from 'react'
 import { Header } from './components'
 import { Home, Rsvp, Schedule } from './pages'
-
-const theme = createTheme({
-  typography: {
-    fontFamily: '"Libre Baskerville", "Baskerville", serif',
-  },
-})
 
 function App() {
   const handleNavigate = useCallback((sectionId: string) => {
@@ -20,7 +14,7 @@ function App() {
   }, [])
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <CssBaseline />
       <Header onNavigate={handleNavigate} />
       <Box
@@ -39,7 +33,7 @@ function App() {
         <Schedule />
         <Rsvp />
       </Box>
-    </ThemeProvider>
+    </>
   )
 }
 
