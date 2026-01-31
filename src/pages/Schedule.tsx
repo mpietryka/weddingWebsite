@@ -1,54 +1,63 @@
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material'
-import { AlternateReverseTimeline, MobileTimeline } from '../components'
+import { Box, Divider, Typography } from '@mui/material'
 import { sectionBase, sectionInner, centerRow } from './styles'
+import scheduleData from '../data/schedule.json'
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
+import TrainOutlinedIcon from '@mui/icons-material/TrainOutlined'
+
+import CheckroomOutlinedIcon from '@mui/icons-material/CheckroomOutlined';
+import { ScheduleItem } from '../components'
 
 export default function Schedule() {
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-
   return (
     <Box
       id="schedule"
       component="section"
-      sx={sectionBase}
+      sx={{ ...sectionBase, px: { xs: '16px', md: 0 } }}
     >
       <Box sx={sectionInner}>
         <Box sx={centerRow}>
-          <Typography variant="h3" component="h2">
+          <Typography variant="h4" component="h2" sx={{fontWeight: 500}}>
             Schedule
           </Typography>
         </Box>
         <Box sx={centerRow}>
-          <Typography variant="body1">Here's the plan for the day:</Typography>
-        </Box>
-      </Box>
-      <Box sx={{ ...sectionInner, justifyContent: 'center', width: { xs: '100%', lg: '60%' } }}>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'start',
-            width: '100%',
-          }}
-        >
-          {isMobile ? <MobileTimeline /> : <AlternateReverseTimeline />}
-        </Box>
-        <Box sx={centerRow}>
-          <Typography variant="h5">
-            <strong>Dress code: </strong>
+        <Typography variant="body1" sx={{fontWeight: 300, textAlign: 'center'}}>
+            Saturday, 6 June 2026
           </Typography>
-        </Box>
-        <Box sx={centerRow}>
-          <Typography variant="body1">
-            <i style={{ fontWeight: 350 }}>Relaxed Pub Chic</i> - no suits or evening gowns required.
-          </Typography>
-        </Box>
-        <Box sx={centerRow}>
-          <Typography variant="body1">We are getting married in a pub. Look good, feel comfy, bring your best vibes.</Typography>
+          </Box>
+        <Divider sx={{ width: '100%', borderColor: 'rgba(0, 0, 0, 0.12)', marginBottom: 4 }} />
+
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, width: '100%' }}>
+          <ScheduleItem
+            time="9:45"
+            title="Ceremony"
+            description={scheduleData.text1}
+            subsections={[
+              { icon: <LocationOnOutlinedIcon />, text: "Hackney Town Hall", link: "https://maps.app.goo.gl/jS5zdmdVHGmrzdzi9" },
+              { icon: <CheckroomOutlinedIcon/>, text: "Pub Chic" },
+            ]}
+          />
+
+          <ScheduleItem
+            time="11:00"
+            title="Overground"
+            description={scheduleData.text2}
+            subsections={[
+              { icon: <TrainOutlinedIcon />, text: "Hackney Central → Homerton" }
+            ]}
+          />
+
+          <ScheduleItem
+            time="11:30"
+            title="Reception"
+            description={scheduleData.text3}
+            subsections={[
+              { icon: <LocationOnOutlinedIcon />, text: "The Spread Eagle", link: "https://maps.app.goo.gl/8THDfSnJj7zUbrRX7" },
+              { icon: <CheckroomOutlinedIcon/>, text: "Pub Chic" }
+            ]}
+          />
         </Box>
       </Box>
     </Box>
   )
 }
-
-
-

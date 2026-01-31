@@ -11,7 +11,7 @@ export default function Rsvp() {
     >
       <Box sx={sectionInner}>
         <Box sx={centerRow}>
-          <Typography variant="h3" component="h2">
+          <Typography variant="h4" component="h2" sx={{fontWeight: 500}}>
             RSVP
           </Typography>
         </Box>
