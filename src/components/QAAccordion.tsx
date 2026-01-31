@@ -36,8 +36,7 @@ export default function QAAccordion({ items }: QAAccordionProps) {
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             sx={{
-              backgroundColor: '#FAFAFA',
-              borderRadius: '10px',
+              borderRadius: '10px'
             }}
           >
             <Typography sx={{ fontWeight: 500 }}>{item.question}</Typography>
