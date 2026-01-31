@@ -22,7 +22,7 @@ export default function Schedule() {
           <Typography variant="body1">Here's the plan for the day:</Typography>
         </Box>
       </Box>
-      <Box sx={{...sectionInner, justifyContent: 'center', width: { xs: '100%', lg: '60%' }}}>
+      <Box sx={{ ...sectionInner, justifyContent: 'center', width: { xs: '100%', lg: '60%' } }}>
         <Box
           sx={{
             display: 'flex',
@@ -31,6 +31,19 @@ export default function Schedule() {
           }}
         >
           {isMobile ? <MobileTimeline /> : <AlternateReverseTimeline />}
+        </Box>
+        <Box sx={centerRow}>
+          <Typography variant="h5">
+            <strong>Dress code: </strong>
+          </Typography>
+        </Box>
+        <Box sx={centerRow}>
+          <Typography variant="body1">
+            <i style={{ fontWeight: 350 }}>Relaxed Pub Chic</i> - no suits or evening gowns required.
+          </Typography>
+        </Box>
+        <Box sx={centerRow}>
+          <Typography variant="body1">We are getting married in a pub. Look good, feel comfy, bring your best vibes.</Typography>
         </Box>
       </Box>
     </Box>

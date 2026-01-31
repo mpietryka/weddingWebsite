@@ -1,5 +1,6 @@
 import { Box, TextField, Checkbox, FormControlLabel, Button, Typography, Alert, CircularProgress } from '@mui/material'
 import { useState } from 'react'
+import { rsvpTextField, rsvpButton } from './styles'
 
 export default function RsvpForm() {
   const [formData, setFormData] = useState({
@@ -170,7 +171,7 @@ export default function RsvpForm() {
           error={!!errors.firstName}
           helperText={errors.firstName}
           FormHelperTextProps={{ sx: { fontSize: '0.7rem', mt: 0 } }}
-          sx={{ '& .MuiOutlinedInput-root': { borderRadius: '10px' } }}
+          sx={rsvpTextField}
           fullWidth
         />
 
@@ -189,7 +190,7 @@ export default function RsvpForm() {
           error={!!errors.lastName}
           helperText={errors.lastName}
           FormHelperTextProps={{ sx: { fontSize: '0.7rem', mt: 0 } }}
-          sx={{ '& .MuiOutlinedInput-root': { borderRadius: '10px' } }}
+          sx={rsvpTextField}
           fullWidth
         />
 
@@ -211,7 +212,7 @@ export default function RsvpForm() {
           error={!!errors.email}
           helperText={errors.email}
           FormHelperTextProps={{ sx: { fontSize: '0.7rem', mt: 0} }}
-          sx={{ '& .MuiOutlinedInput-root': { borderRadius: '10px' } }}
+          sx={rsvpTextField}
           fullWidth
         />
 
@@ -293,7 +294,7 @@ export default function RsvpForm() {
           type="submit"
           size="large"
           disabled={isSubmitting}
-          style={{ borderRadius: '30px', border: '1px solid black', minWidth: '150px', color: 'black' }}
+          style={rsvpButton}
           sx={{ mt: 1 }}
         >
           {isSubmitting ? (

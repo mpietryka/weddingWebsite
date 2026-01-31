@@ -62,8 +62,6 @@ export default function Countdown({ target, onComplete, className }: CountdownPr
       <TimeBlock label="Hours" value={pad2(timeLeft.hours)} />
       <Separator />
       <TimeBlock label="Minutes" value={pad2(timeLeft.minutes)} />
-      <Separator />
-      <TimeBlock label="Seconds" value={pad2(Math.max(0, Math.floor((toTimestampMs(target) - Date.now()) / 1000) % 60))} />
     </Box>
   )
 }

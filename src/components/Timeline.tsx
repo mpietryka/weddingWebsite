@@ -20,6 +20,7 @@ export default function AlternateReverseTimeline() {
           <Box sx={timelineCard}>
             <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{scheduleData.title1}</Typography>
             <Typography variant="body1">{scheduleData.text1}</Typography>
+            <Typography variant="body1">{scheduleData.subtext1}</Typography>
           </Box>
         </TimelineContent>
       </TimelineItem>
@@ -48,15 +49,6 @@ export default function AlternateReverseTimeline() {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Box sx={timelineCard}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{scheduleData.title4}</Typography>
-            <Typography variant="body1">{scheduleData.text4}</Typography>
-          </Box>
-        </TimelineContent>
       </TimelineItem>
     </Timeline>
   );

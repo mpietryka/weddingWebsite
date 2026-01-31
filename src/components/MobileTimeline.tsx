@@ -13,12 +13,15 @@ export default function MobileTimeline() {
         width: '100%',
       }}
     >
-      <Box sx={{ ...timelineCard, mx: 3, my: 1.5 }}>
+      <Box sx={{ ...timelineCard, mx: 3, my: 1.5, width: 'calc(100% - 48px)' }}>
         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
           {scheduleData.title1}
         </Typography>
         <Typography variant="body1">
           {scheduleData.text1}
+        </Typography>
+        <Typography variant="body1">
+          {scheduleData.subtext1}
         </Typography>
       </Box>
 
@@ -26,7 +29,7 @@ export default function MobileTimeline() {
         <TimelineDot />
       </Box>
 
-      <Box sx={{ ...timelineCard, mx: 3, my: 1.5 }}>
+      <Box sx={{ ...timelineCard, mx: 3, my: 1.5, width: 'calc(100% - 48px)' }}>
         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
           {scheduleData.title2}
         </Typography>
@@ -39,25 +42,12 @@ export default function MobileTimeline() {
         <TimelineDot />
       </Box>
 
-      <Box sx={{ ...timelineCard, mx: 3, my: 1.5 }}>
+      <Box sx={{ ...timelineCard, mx: 3, my: 1.5, width: 'calc(100% - 48px)' }}>
         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
           {scheduleData.title3}
         </Typography>
         <Typography variant="body1">
           {scheduleData.text3}
-        </Typography>
-      </Box>
-
-      <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', my: 1 }}>
-        <TimelineDot />
-      </Box>
-
-      <Box sx={{ ...timelineCard, mx: 3, my: 1.5 }}>
-        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-          {scheduleData.title4}
-        </Typography>
-        <Typography variant="body1">
-          {scheduleData.text4}
         </Typography>
       </Box>
     </Box>

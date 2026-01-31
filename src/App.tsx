@@ -1,9 +1,15 @@
 import './App.css'
 
-import { CssBaseline, Box } from '@mui/material'
+import { CssBaseline, Box, ThemeProvider, createTheme } from '@mui/material'
 import { useCallback } from 'react'
 import { Header } from './components'
 import { Home, Rsvp, Schedule } from './pages'
+
+const theme = createTheme({
+  typography: {
+    fontFamily: '"Montserrat", "Roboto", "Helvetica", "Arial", sans-serif',
+  },
+})
 
 function App() {
   const handleNavigate = useCallback((sectionId: string) => {
@@ -14,7 +20,7 @@ function App() {
   }, [])
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header onNavigate={handleNavigate} />
       <Box
@@ -28,12 +34,12 @@ function App() {
           '&::-webkit-scrollbar': { display: 'none' }, // Chrome/Safari
         }}
       >
-        <div style={{ height: '60px', backgroundColor: '#F5F5F4'}} />
+        <div style={{ height: '100px', backgroundColor: '#F5F5F4'}} />
         <Home />
         <Schedule />
         <Rsvp />
       </Box>
-    </>
+    </ThemeProvider>
   )
 }
 

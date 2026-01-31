@@ -19,26 +19,27 @@ export default function Home() {
       sx={sectionBase}
     >
       <Box sx={sectionInner}>
-        <Countdown target={targetDate} />
-        <Box sx={centerRow}>
-          <Typography variant="h3" component="h2" >
-            BARBARA + MATEUSZ
-          </Typography>
+      <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', px: { xs: 0, md: 4, lg: 8 } }}>
+          <Box sx={{ width: '100%', maxWidth: { xs: '100%', md: '600px', lg: '700px' } }}>
+            <PhotoCarousel />
+          </Box>
         </Box>
-        <Box sx={centerRow} style={{ display: 'flex', flexDirection: 'column' }}>
-          <Typography >
-            Saturday, 6th June 2026 at 10 am
+
+        <Box sx={centerRow} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: '10px'}}>
+          <Typography variant="h5" sx={{fontWeight: 500, textAlign: 'center'}}>
+            Saturday, 6 June 2026
           </Typography>
-          <Typography >
+          <Typography variant="h6" sx={{fontWeight: 300, textAlign: 'center', marginBottom: '8px'}}>
             Hackney Town Hall, London
           </Typography>
         </Box>
-        <Box sx={centerRow}>
-          <Button style={{ borderRadius: '30px', border: '1px solid black', minWidth: '150px', color: 'black' }} size='large' onClick={handleNavigate}>RSVP</Button>
+        <Box sx={{ marginBottom: '10px'}}>
+          <Countdown target={targetDate} />
         </Box>
-        <Box>
-          <PhotoCarousel />
+        <Box sx={centerRow} style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button style={{ borderRadius: '30px', border: '1px solid black', minWidth: '80px', color: 'black', backgroundColor: '#FAFAFA' }} size='large' onClick={handleNavigate}>RSVP</Button>
         </Box>
+
       </Box>
     </Box>
   )
