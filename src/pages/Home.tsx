@@ -1,8 +1,7 @@
 import { Box, Button, Typography } from '@mui/material'
 import { useCallback } from 'react'
-import { Countdown } from '../components'
+import { Countdown, PhotoCarousel } from '../components'
 import { sectionBase, sectionInner, centerRow } from './styles'
-import polaroids from '../assets/images/polaroids.jpg'
 
 export default function Home() {
   const targetDate = new Date("2026-06-06T10:00:00+01:00");
@@ -38,13 +37,7 @@ export default function Home() {
           <Button style={{ borderRadius: '30px', border: '1px solid black', minWidth: '150px', color: 'black' }} size='large' onClick={handleNavigate}>RSVP</Button>
         </Box>
         <Box>
-          <img
-            src={polaroids}
-            alt="Barbara and Mateusz"
-            style={{
-              width: '100%'
-            }}
-          />
+          <PhotoCarousel />
         </Box>
       </Box>
     </Box>
