@@ -18,7 +18,7 @@ export const sectionInner: SxProps<Theme> = {
   flexDirection: 'column',
   gap: 2,
   width: '100%',
-  maxWidth: { xs: '100%', lg: '70%' },
+  maxWidth: { xs: '100%', lg: '50%' },
   mx: 'auto',
 }
 

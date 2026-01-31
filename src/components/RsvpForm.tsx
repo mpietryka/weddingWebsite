@@ -137,7 +137,7 @@ export default function RsvpForm() {
   }
 
   return (
-    <Box sx={{ px: { xs: 2, md: 0 }, width: '100%' }}>
+    <Box sx={{ px: { xs: 3, md: 0 }, width: '100%' }}>
       <Box
         component="form"
         onSubmit={handleSubmit}

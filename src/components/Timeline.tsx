@@ -18,7 +18,7 @@ export default function AlternateReverseTimeline() {
         <TimelineContent>
           <Box sx={timelineCard}>
             <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Hackney Town Hall - 10:00 </Typography>
-            <Typography variant="body1">Please arrive by 9:45, for a 10 start. Any latecomers will have to wait outside until the ceremony is over. We don't want to you to miss it!</Typography>
+            <Typography variant="body1">Please arrive by 9:45, for a 10am start. Any latecomers will have to wait outside until the ceremony is over. We don't want to you to miss it!</Typography>
             </Box>
         </TimelineContent>
       </TimelineItem>
@@ -30,7 +30,7 @@ export default function AlternateReverseTimeline() {
         <TimelineContent>
           <Box sx={timelineCard}>
             <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Overground - 11:00</Typography>
-            <Typography variant="body1">After the ceremony, we'll head to the Overground station to catch the quick train to our final destination. </Typography>
+            <Typography variant="body1">After the ceremony, we'll head to the Overground station to catch the quick train to our final destination. The Spread Eagle Pub!</Typography>
           </Box>
         </TimelineContent>
       </TimelineItem>

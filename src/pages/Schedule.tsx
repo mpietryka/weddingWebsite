@@ -1,8 +1,11 @@
-import { Box, Typography } from '@mui/material'
-import { AlternateReverseTimeline } from '../components'
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { AlternateReverseTimeline, MobileTimeline } from '../components'
 import { sectionBase, sectionInner, centerRow } from './styles'
 
 export default function Schedule() {
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+
   return (
     <Box
       id="schedule"
@@ -27,7 +30,7 @@ export default function Schedule() {
             width: '100%',
           }}
         >
-          <AlternateReverseTimeline />
+          {isMobile ? <MobileTimeline /> : <AlternateReverseTimeline />}
         </Box>
       </Box>
     </Box>
