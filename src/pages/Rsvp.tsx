@@ -1,5 +1,11 @@
 import { Box, Typography, Divider } from '@mui/material'
-import { sectionBase, sectionInner, centerRow } from './styles'
+import {
+  sectionBase,
+  sectionInner,
+  centerRow,
+  pageTitle,
+  pageDividerWithMargin,
+} from './styles'
 import RsvpForm from '../components/RsvpForm'
 
 export default function Rsvp() {
@@ -11,11 +17,11 @@ export default function Rsvp() {
     >
       <Box sx={sectionInner}>
         <Box sx={centerRow}>
-          <Typography variant="h4" component="h2" sx={{fontWeight: 500}}>
+          <Typography variant="h4" component="h2" sx={pageTitle}>
             RSVP
           </Typography>
         </Box>
-        <Divider sx={{ width: '100%', borderColor: 'rgba(0, 0, 0, 0.12)', marginBottom: 2 }} />
+        <Divider sx={pageDividerWithMargin} />
         <RsvpForm />
       </Box>
     </Box>

@@ -1,5 +1,12 @@
 import { Box, Typography, Divider } from '@mui/material'
-import { sectionBase, sectionInner, centerRow } from './styles'
+import {
+  sectionBase,
+  sectionInner,
+  centerRow,
+  pageTitle,
+  pageDivider,
+  qaAccordionWrapper,
+} from './styles'
 import { QAAccordion } from '../components'
 import { qandaItems } from '../data/qandaItems'
 
@@ -12,12 +19,12 @@ export default function QA() {
     >
       <Box sx={sectionInner}>
         <Box sx={centerRow}>
-          <Typography variant="h4" component="h2" sx={{fontWeight: 500}}>
+          <Typography variant="h4" component="h2" sx={pageTitle}>
             Q&A
           </Typography>
         </Box>
-        <Divider sx={{ width: '100%', borderColor: 'rgba(0, 0, 0, 0.12)' }} />
-        <Box sx={{ width: '100%', maxWidth: '800px', mt: 3 }}>
+        <Divider sx={pageDivider} />
+        <Box sx={qaAccordionWrapper}>
           <QAAccordion items={qandaItems} />
         </Box>
       </Box>

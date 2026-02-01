@@ -1,5 +1,13 @@
 import { Box, Divider, Typography } from '@mui/material'
-import { sectionBase, sectionInner, centerRow } from './styles'
+import {
+  sectionBase,
+  sectionInner,
+  centerRow,
+  pageTitle,
+  scheduleDate,
+  scheduleDivider,
+  scheduleContainer,
+} from './styles'
 import scheduleData from '../data/schedule.json'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import TrainOutlinedIcon from '@mui/icons-material/TrainOutlined'
@@ -16,18 +24,18 @@ export default function Schedule() {
     >
       <Box sx={sectionInner}>
         <Box sx={centerRow}>
-          <Typography variant="h4" component="h2" sx={{fontWeight: 500}}>
+          <Typography variant="h4" component="h2" sx={pageTitle}>
             Schedule
           </Typography>
         </Box>
         <Box sx={centerRow}>
-        <Typography variant="body1" sx={{fontWeight: 300, textAlign: 'center'}}>
+          <Typography variant="body1" sx={scheduleDate}>
             Saturday, 6 June 2026
           </Typography>
-          </Box>
-        <Divider sx={{ width: '100%', borderColor: 'rgba(0, 0, 0, 0.12)', marginBottom: 4 }} />
+        </Box>
+        <Divider sx={scheduleDivider} />
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, width: '100%' }}>
+        <Box sx={scheduleContainer}>
           <ScheduleItem
             time="9:45"
             title="Ceremony"
