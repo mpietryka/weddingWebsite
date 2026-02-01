@@ -39,7 +39,6 @@ export default function Home() {
         <Box sx={centerRow} style={{ display: 'flex', justifyContent: 'center' }}>
           <Button style={{ borderRadius: '30px', border: '1px solid black', minWidth: '80px', color: 'black', backgroundColor: '#FAFAFA' }} size='large' onClick={handleNavigate}>RSVP</Button>
         </Box>
-
       </Box>
     </Box>
   )

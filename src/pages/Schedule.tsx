@@ -33,8 +33,8 @@ export default function Schedule() {
             title="Ceremony"
             description={scheduleData.text1}
             subsections={[
-              { icon: <LocationOnOutlinedIcon />, text: "Hackney Town Hall", link: "https://maps.app.goo.gl/jS5zdmdVHGmrzdzi9" },
-              { icon: <CheckroomOutlinedIcon/>, text: "Pub Chic" },
+              { icon: <LocationOnOutlinedIcon />, text: scheduleData.weddinglocation, link: "https://maps.app.goo.gl/jS5zdmdVHGmrzdzi9" },
+              { icon: <CheckroomOutlinedIcon/>, text: scheduleData.dresscode },
             ]}
           />
 
@@ -52,8 +52,8 @@ export default function Schedule() {
             title="Reception"
             description={scheduleData.text3}
             subsections={[
-              { icon: <LocationOnOutlinedIcon />, text: "The Spread Eagle", link: "https://maps.app.goo.gl/8THDfSnJj7zUbrRX7" },
-              { icon: <CheckroomOutlinedIcon/>, text: "Pub Chic" }
+              { icon: <LocationOnOutlinedIcon />, text: scheduleData.receptionlocation, link: "https://maps.app.goo.gl/8THDfSnJj7zUbrRX7" },
+              { icon: <CheckroomOutlinedIcon/>, text: scheduleData.dresscode }
             ]}
           />
         </Box>

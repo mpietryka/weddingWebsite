@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Box, Typography } from '@mui/material'
+import { countdownContainer, timeBlockContainer, timeBlockValue, timeBlockLabel, separatorText } from './Countdown.style'
 
 type CountdownProps = {
   target: Date | string | number
@@ -56,7 +57,7 @@ export default function Countdown({ target, onComplete, className }: CountdownPr
   }, [targetMs, onComplete])
 
   return (
-    <Box className={className} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+    <Box className={className} sx={countdownContainer}>
       <TimeBlock label="Days" value={String(timeLeft.days)} />
       <Separator />
       <TimeBlock label="Hours" value={pad2(timeLeft.hours)} />
@@ -68,11 +69,11 @@ export default function Countdown({ target, onComplete, className }: CountdownPr
 
 function TimeBlock({ label, value }: { label: string; value: string }) {
   return (
-    <Box sx={{ textAlign: 'center', minWidth: 72 }}>
-      <Typography variant="h3" component="div" color="text.primary" sx={{ fontSize: 12, lineHeight: 1.2 }}>
+    <Box sx={timeBlockContainer}>
+      <Typography variant="h3" component="div" color="text.primary" sx={timeBlockValue}>
         {value}
       </Typography>
-      <Typography variant="caption" color="text.secondary" sx={{ fontSize: 12, lineHeight: 1.2 }}>
+      <Typography variant="caption" color="text.secondary" sx={timeBlockLabel}>
         {label}
       </Typography>
     </Box>
@@ -81,7 +82,7 @@ function TimeBlock({ label, value }: { label: string; value: string }) {
 
 function Separator() {
   return (
-    <Typography variant="h4" component="div" color="text.secondary" sx={{ lineHeight: 1, fontSize: 12 }}>
+    <Typography variant="h4" component="div" color="text.secondary" sx={separatorText}>
       :
     </Typography>
   )

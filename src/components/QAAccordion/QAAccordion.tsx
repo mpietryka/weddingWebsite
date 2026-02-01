@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material'
+import { Accordion, AccordionSummary, AccordionDetails, Typography, Box } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { accordionStyle, accordionSummaryStyle, questionText, answerText } from './QAAccordion.style'
 
 interface QAItem {
   question: string
@@ -19,35 +20,27 @@ export default function QAAccordion({ items }: QAAccordionProps) {
   }
 
   return (
-    <div>
+    <Box>
       {items.map((item, index) => (
         <Accordion
           key={index}
           expanded={expanded === `panel${index}`}
           onChange={handleChange(`panel${index}`)}
-          sx={{
-            boxShadow: 'none',
-            '&:before': {
-              display: 'none',
-            },
-            mb: 1,
-          }}
+          sx={accordionStyle}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
-            sx={{
-              borderRadius: '10px'
-            }}
+            sx={accordionSummaryStyle}
           >
-            <Typography sx={{ fontWeight: 500 }}>{item.question}</Typography>
+            <Typography sx={questionText}>{item.question}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            <Typography variant="body2" sx={answerText}>
               {item.answer}
             </Typography>
           </AccordionDetails>
         </Accordion>
       ))}
-    </div>
+    </Box>
   )
 }

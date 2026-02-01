@@ -1,6 +1,17 @@
 import { Box, TextField, Checkbox, FormControlLabel, Button, Typography, Alert, CircularProgress } from '@mui/material'
 import { useState } from 'react'
-import { rsvpTextField, rsvpButton } from './styles'
+import {
+  formContainer,
+  formBox,
+  alertBox,
+  textField,
+  helperTextProps,
+  checkboxContainer,
+  errorText,
+  submitButton,
+  submitButtonSx,
+  loadingSpinner,
+} from './RsvpForm.style'
 
 export default function RsvpForm() {
   const [formData, setFormData] = useState({
@@ -138,21 +149,10 @@ export default function RsvpForm() {
   }
 
   return (
-    <Box sx={{ px: { xs: 3, md: 0 }, width: '100%' }}>
-      <Box
-        component="form"
-        onSubmit={handleSubmit}
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 1,
-          maxWidth: '500px',
-          mx: 'auto',
-          width: '100%'
-        }}
-      >
+    <Box sx={formContainer}>
+      <Box component="form" onSubmit={handleSubmit} sx={formBox}>
         {submitStatus && (
-          <Alert severity={submitStatus.type} sx={{ mb: 2 }}>
+          <Alert severity={submitStatus.type} sx={alertBox}>
             {submitStatus.message}
           </Alert>
         )}
@@ -170,8 +170,8 @@ export default function RsvpForm() {
           }}
           error={!!errors.firstName}
           helperText={errors.firstName}
-          FormHelperTextProps={{ sx: { fontSize: '0.7rem', mt: 0 } }}
-          sx={rsvpTextField}
+          FormHelperTextProps={helperTextProps}
+          sx={textField}
           fullWidth
         />
 
@@ -189,8 +189,8 @@ export default function RsvpForm() {
           }}
           error={!!errors.lastName}
           helperText={errors.lastName}
-          FormHelperTextProps={{ sx: { fontSize: '0.7rem', mt: 0 } }}
-          sx={rsvpTextField}
+          FormHelperTextProps={helperTextProps}
+          sx={textField}
           fullWidth
         />
 
@@ -211,8 +211,8 @@ export default function RsvpForm() {
           }}
           error={!!errors.email}
           helperText={errors.email}
-          FormHelperTextProps={{ sx: { fontSize: '0.7rem', mt: 0} }}
-          sx={rsvpTextField}
+          FormHelperTextProps={helperTextProps}
+          sx={textField}
           fullWidth
         />
 
@@ -220,7 +220,7 @@ export default function RsvpForm() {
           <Typography variant="body1">
             Will you join us?
           </Typography>
-          <Box sx={{ display: 'flex', gap: 2 }}>
+          <Box sx={checkboxContainer}>
             <FormControlLabel
               control={
                 <Checkbox
@@ -247,7 +247,7 @@ export default function RsvpForm() {
             />
           </Box>
           {errors.attending && (
-            <Typography variant="caption" color="error" sx={{ display: 'block', fontSize: '0.7rem' }}>
+            <Typography variant="caption" color="error" sx={errorText}>
               {errors.attending}
             </Typography>
           )}
@@ -257,7 +257,7 @@ export default function RsvpForm() {
           <Typography variant="body1">
             Are you bringing a +1?
           </Typography>
-          <Box sx={{ display: 'flex', gap: 2 }}>
+          <Box sx={checkboxContainer}>
             <FormControlLabel
               control={
                 <Checkbox
@@ -284,7 +284,7 @@ export default function RsvpForm() {
             />
           </Box>
           {errors.plusOne && (
-            <Typography variant="caption" color="error" sx={{ display: 'block', fontSize: '0.7rem' }}>
+            <Typography variant="caption" color="error" sx={errorText}>
               {errors.plusOne}
             </Typography>
           )}
@@ -294,12 +294,12 @@ export default function RsvpForm() {
           type="submit"
           size="large"
           disabled={isSubmitting}
-          style={rsvpButton}
-          sx={{ mt: 1 }}
+          style={submitButton}
+          sx={submitButtonSx}
         >
           {isSubmitting ? (
             <>
-              <CircularProgress size={20} sx={{ mr: 1, color: 'black' }} />
+              <CircularProgress size={20} sx={loadingSpinner} />
               Submitting...
             </>
           ) : (
