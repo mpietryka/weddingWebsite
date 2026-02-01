@@ -85,6 +85,37 @@ export default function PhotoCarousel() {
         onContextMenu={(e) => e.preventDefault()}
         draggable={false}
       />
+
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: '16px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          gap: '8px',
+          zIndex: 2,
+        }}
+      >
+        {photos.map((_, index) => (
+          <Box
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            sx={{
+              width: '10px',
+              height: '10px',
+              borderRadius: '50%',
+              backgroundColor: currentIndex === index ? '#fff' : 'rgba(255, 255, 255, 0.5)',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                backgroundColor: '#fff',
+                transform: 'scale(1.2)',
+              },
+            }}
+          />
+        ))}
+      </Box>
     </Box>
   )
 }
