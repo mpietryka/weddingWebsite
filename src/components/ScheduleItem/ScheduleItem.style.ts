@@ -29,7 +29,9 @@ export const contentSection: SxProps<Theme> = {
 }
 
 export const titleText: SxProps<Theme> = {
+  lineHeight: 1,
   fontWeight: 400,
+  marginBottom: '1px',
 }
 
 export const descriptionText: SxProps<Theme> = {

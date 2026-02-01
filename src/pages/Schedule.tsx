@@ -8,7 +8,7 @@ import {
   scheduleDivider,
   scheduleContainer,
 } from './styles'
-import scheduleData from '../data/schedule.json'
+import { scheduleData } from '../data/schedule'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import TrainOutlinedIcon from '@mui/icons-material/TrainOutlined'
 
